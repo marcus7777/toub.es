@@ -144,7 +144,7 @@ sudo sh -c "cat >/etc/apache2/sites-available/drupal.site.conf <<EOL
   RewriteOptions inherit
   CustomLog /var/log/apache2/${DRUPAL_DIR}.log combined
   <Directory ${ROOT_DIR}/${DRUPAL_DIR}>
-    Options +FollowSymLinks Indexes
+    Options +FollowSymLinks +Indexes
     AllowOverride All
     Order allow,deny
     Allow from all
