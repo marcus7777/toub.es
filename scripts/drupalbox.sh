@@ -136,7 +136,7 @@ echo 'OK'
 
 # STEP 6
 echo '******APACHE SETUP******'
-sudo sh -c "cat >/etc/apache2/sites-available/drupal.site <<EOL
+sudo sh -c "cat >/etc/apache2/sites-available/drupal.site.conf <<EOL
 <VirtualHost *:80>
   DocumentRoot ${ROOT_DIR}/${DRUPAL_DIR}
   ServerName localhost
@@ -152,7 +152,7 @@ sudo sh -c "cat >/etc/apache2/sites-available/drupal.site <<EOL
 </VirtualHost>
 EOL"
 
-sudo sh -c "a2ensite drupal.site ; a2dissite default ; service apache2 restart"
+sudo sh -c "a2ensite drupal.site ; a2dissite 000-default.conf ; service apache2 restart"
 echo 'OK'
 
 # STEP 7
